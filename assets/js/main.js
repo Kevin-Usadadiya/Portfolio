@@ -176,3 +176,60 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+/*==================== EMAIL JS ====================*/
+const   contactForm = document.getElementById('contact-form'),
+        contactName = document.getElementById('contact-name'),
+        contactEmail = document.getElementById('contact-email'),
+        contactProject = document.getElementById('contact-project'),
+        contactMessage = document.getElementById('contact-message'),
+        contactAlert = document.getElementById('contact-alert')
+
+const sendEmail = (e) =>{
+    e.preventDefault()
+
+    // if(contactName.value === '' || contactEmail.value === '' || contactProject.value === '' || contactMessage.value === '' ){
+    //     contactAlert.classList.remove('color-blue');
+    //     contactAlert.classList.add('color-red');
+
+    //     contactAlert.textContent = "Write all Input Fields✍️";
+    // }
+    // else{
+        emailjs.sendForm('service_jaohqf5','template_34f8h0k','#contact-form','d--DVHYpu0nEod4Ho')
+            .then(() =>{
+                contactAlert.classList.add('color-blue')
+                contactAlert.textContent = "Message Sent✅"
+
+                setTimeout(() =>{
+                    contactAlert.textContent = ''
+                }, 2000)
+
+        }, (error) => {
+            alert("OOPS! SOMETHING HAS FAILED...",error)
+        })
+
+        contactName.value = ''
+        contactEmail.value = ''
+        contactProject.value = ''
+        contactMessage.value = ''
+    // }
+}
+contactForm.addEventListener('submit', sendEmail)
+
+/*==================== SCROLL ANIMATION ====================*/
+const sr = ScrollReveal({
+    origin : 'top',
+    distance : '60px',
+    duration: 2500,
+    delay: 400,
+})
+
+sr.reveal(`.home`)
+sr.reveal(`.home__img`, {delay: 600, origin:'bottom', interval:100})
+sr.reveal(`.about`, {delay:700, origin:'left',interval:100})
+sr.reveal(`.skills__open, .contact__information`, { origin:'left',})
+sr.reveal(`.skills__close, .contact__content`, { origin:'right',})
+sr.reveal(`.qualification, .services__content, .portfolio`, {interval:100})
+sr.reveal(`.project`, {origin:'bottom', interval:100})
+sr.reveal(`.footer__container`, {origin:'left', interval:100})
+sr.reveal(`.footer__copy`, {origin:'bottom', interval:100})
