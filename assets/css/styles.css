@@ -754,7 +754,7 @@ body.dark-theme{
 }
 
 .potfolio__img{
-    width: 265px;
+    width: 205px;
     border-radius: .5rem;
     justify-self: center;
 }
@@ -789,7 +789,7 @@ body.dark-theme{
 }
 .swiper-button-next{
     right: -.5rem;
-
+    
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets{
