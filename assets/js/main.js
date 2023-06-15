@@ -225,8 +225,8 @@ const sr = ScrollReveal({
 })
 
 sr.reveal(`.home`)
-sr.reveal(`.home__img`, {delay: 600, origin:'bottom', interval:100})
-sr.reveal(`.about`, {delay:700, origin:'left',interval:100})
+sr.reveal(`.home__img`, {delay: 200, origin:'bottom', interval:100})
+sr.reveal(`.about`, {delay:300, origin:'left',interval:100})
 sr.reveal(`.skills__open, .contact__information`, { origin:'left',})
 sr.reveal(`.skills__close, .contact__content`, { origin:'right',})
 sr.reveal(`.qualification, .services__content, .portfolio`, {interval:100})
